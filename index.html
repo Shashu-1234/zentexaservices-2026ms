@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zentexa Services — AI-Powered Efficiency & Excellence</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0A2A5E;
+  --green: #0D5C3A;
+  --accent: #3ab97a;
+  --light: #f4f8ff;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --border: #e5eaf3;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: #1a1a2e; background: var(--white); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(10,42,94,0.97); backdrop-filter: blur(12px);
+  padding: 0 5%; display: flex; align-items: center; justify-content: space-between;
+  height: 70px; border-bottom: 1px solid rgba(58,185,122,0.2); transition: box-shadow .3s;
+}
+.nav-logo-link { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; cursor: pointer; }
+.nav-logo-text { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; line-height: 1; transition: opacity .2s; display: flex; align-items: baseline; gap: px; }
+.nav-logo-text .zen  { color: #4a8fff; }
+.nav-logo-text .texa { color: #6dd464; }
+.nav-logo-text .svc  { color: rgba(255,255,255,0.85); font-weight: 500; }
+.zentexa { display: flex; gap: 0; }
+.nav-logo-link:hover .nav-logo-text { opacity: .8; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; transition: color .2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { background: var(--accent); color: var(--white); padding: 10px 24px; border-radius: 50px; text-decoration: none; font-size: 14px; font-weight: 600; transition: all .2s; white-space: nowrap; }
+.nav-cta:hover { background: #2ea368; transform: translateY(-1px); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 2px; background: white; border-radius: 2px; }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #061828 0%, #0A2A5E 50%, #0D5C3A 100%);
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 100px 5% 60px; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233ab97a' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-badge { display: inline-block; background: rgba(58,185,122,0.15); border: 1px solid rgba(58,185,122,0.4); color: var(--accent); font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 18px; border-radius: 50px; margin-bottom: 24px; animation: fadeDown .8s ease both; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 6vw, 72px); font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 20px; animation: fadeDown .9s .1s ease both; }
+.hero h1 .highlight { color: var(--accent); }
+.hero p { font-size: clamp(15px, 2vw, 19px); color: rgba(255,255,255,0.7); max-width: 640px; margin: 0 auto 40px; line-height: 1.7; font-weight: 300; animation: fadeDown 1s .2s ease both; }
+.hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeDown 1s .3s ease both; }
+.btn-primary { background: var(--accent); color: white; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-size: 15px; font-weight: 600; transition: all .2s; display: inline-block; }
+.btn-primary:hover { background: #2ea368; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(58,185,122,0.35); }
+.btn-outline { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.4); padding: 16px 36px; border-radius: 50px; text-decoration: none; font-size: 15px; font-weight: 500; transition: all .2s; display: inline-block; }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+.hero-stats { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; margin-top: 70px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); animation: fadeDown 1s .4s ease both; }
+.stat-item { text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 800; color: var(--accent); }
+.stat-label { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: 1px; margin-top: 4px; }
+
+/* WHY US */
+#whyus { background: var(--navy); }
+.whyus-header { text-align: center; margin-bottom: 52px; }
+.whyus-header .section-tag { background: rgba(58,185,122,0.15); color: var(--accent); }
+.whyus-header .section-title { color: var(--white); }
+.whyus-header .section-sub { color: rgba(255,255,255,0.6); margin: 0 auto; }
+.whyus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+.why-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 36px 28px;
+  transition: all .3s; position: relative; overflow: hidden;
+}
+.why-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 3px; background: linear-gradient(90deg, var(--accent), #2ea368);
+  transform: scaleX(0); transform-origin: left; transition: transform .3s;
+}
+.why-card:hover { background: rgba(255,255,255,0.09); transform: translateY(-5px); }
+.why-card:hover::before { transform: scaleX(1); }
+.why-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  background: rgba(58,185,122,0.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; margin-bottom: 20px;
+}
+.why-card h3 { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+.why-card p  { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+.why-card .why-tag {
+  display: inline-block; margin-top: 16px;
+  background: rgba(58,185,122,0.15); color: var(--accent);
+  font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* SECTIONS */
+section { padding: 90px 5%; }
+.section-tag { display: inline-block; background: rgba(13,92,58,0.1); color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 50px; margin-bottom: 14px; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+.section-sub { font-size: 16px; color: var(--gray); max-width: 520px; line-height: 1.7; }
+
+/* ABOUT */
+#about { background: var(--light); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; }
+.about-text .section-sub { max-width: 100%; margin-top: 0; }
+.about-points { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+.about-point { display: flex; align-items: flex-start; gap: 14px; background: white; border-radius: 12px; padding: 16px 20px; border: 1px solid var(--border); }
+.about-point .icon { font-size: 22px; flex-shrink: 0; width: 44px; height: 44px; border-radius: 10px; background: rgba(58,185,122,0.1); display: flex; align-items: center; justify-content: center; }
+.about-point h4 { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+.about-point p  { font-size: 13px; color: var(--gray); line-height: 1.5; }
+.about-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.about-card { background: var(--navy); border-radius: 16px; padding: 32px 24px; text-align: center; color: white; }
+.about-card.green  { background: var(--green); }
+.about-card.accent { background: var(--accent); }
+.about-card .num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 800; color: var(--accent); margin-bottom: 6px; }
+.about-card.green .num  { color: rgba(255,255,255,0.9); }
+.about-card.accent .num { color: white; font-size: 28px; margin-bottom: 4px; }
+.about-card p { font-size: 12px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px; }
+
+/* SERVICES */
+#services { background: white; }
+.services-header { text-align: center; margin-bottom: 56px; }
+.services-header .section-sub { margin: 0 auto; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+.service-card { background: var(--white); border: 1px solid var(--border); border-radius: 20px; padding: 36px 28px; transition: all .3s; position: relative; overflow: hidden; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--navy), var(--accent)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(10,42,94,0.1); border-color: transparent; }
+.service-card:hover::before { transform: scaleX(1); }
+.svc-icon { width: 56px; height: 56px; border-radius: 14px; background: var(--light); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 20px; }
+.service-card h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.service-card p  { font-size: 14px; color: var(--gray); line-height: 1.7; }
+.svc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+.svc-tag { background: var(--light); color: var(--navy); font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
+
+/* PORTFOLIO */
+#portfolio { background: var(--light); }
+.portfolio-header { text-align: center; margin-bottom: 52px; }
+.portfolio-header .section-sub { margin: 0 auto; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1200px; margin: 0 auto; }
+.portfolio-card { background: white; border-radius: 20px; overflow: hidden; border: 1px solid var(--border); transition: all .3s; }
+.portfolio-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(10,42,94,0.1); }
+.port-img { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 52px; }
+.port-img.blue   { background: linear-gradient(135deg, #0A2A5E, #1a4a8e); }
+.port-img.green  { background: linear-gradient(135deg, #0D5C3A, #1a8a5a); }
+.port-img.teal   { background: linear-gradient(135deg, #0a5e5e, #0d8c8c); }
+.port-img.purple { background: linear-gradient(135deg, #3d0a5e, #6b1a9e); }
+.port-img.orange { background: linear-gradient(135deg, #5e2a0a, #9e5a1a); }
+.port-img.dark   { background: linear-gradient(135deg, #1a1a2e, #2d2d4e); }
+.port-body { padding: 24px; }
+.port-type { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.port-body h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.port-body p  { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+/* CONTACT */
+#contact { background: white; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; max-width: 1100px; margin: 0 auto; }
+.contact-info p { font-size: 15px; color: var(--gray); line-height: 1.7; margin-bottom: 32px; }
+.contact-item { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.contact-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--light); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.contact-item h4 { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+.contact-item p  { font-size: 14px; color: var(--gray); margin: 0; }
+.contact-form { background: var(--light); border-radius: 24px; padding: 40px; }
+.contact-form h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 24px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 7px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 13px 16px; border: 1.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 14px; color: #1a1a2e; background: white; outline: none; transition: border-color .2s; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-submit { width: 100%; padding: 16px; background: linear-gradient(135deg, var(--navy), var(--green)); color: white; border: none; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; transition: all .2s; margin-top: 4px; }
+.form-submit:hover { opacity: .9; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,42,94,0.25); }
+.form-success { display: none; background: #d6f0e4; border: 1px solid var(--accent); color: var(--green); padding: 14px 18px; border-radius: 10px; font-size: 14px; font-weight: 500; text-align: center; margin-top: 12px; }
+
+/* FOOTER */
+footer { background: linear-gradient(135deg, #061828, #0A2A5E); color: white; padding: 56px 5% 28px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; max-width: 1100px; margin: 0 auto 48px; }
+.footer-brand .logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+.footer-brand .logo .zen  { color: #4a8fff; }
+.footer-brand .logo .texa { color: #6dd464; }
+.footer-brand .logo .svc  { color: rgba(255,255,255,0.85); font-weight: 500; }
+.footer-brand p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; max-width: 280px; }
+.footer-col h4 { font-size: 13px; font-weight: 700; color: white; letter-spacing: 1px; margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li a { font-size: 14px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color .2s; }
+.footer-col ul li a:hover { color: var(--accent); }
+.footer-bottom { max-width: 1100px; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.4); }
+
+/* ANIMATIONS */
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { transition: opacity .65s ease, transform .65s ease; }
+.reveal.hide { opacity: 0; transform: translateY(28px); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-grid   { grid-template-columns: 1fr; }
+  .about-visual { display: none; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid  { grid-template-columns: 1fr 1fr; }
+  .form-row     { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .nav-links { display: none; }
+  .nav-cta   { display: none; }
+  .hamburger { display: flex; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .hero-stats  { gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo-link" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+    <div class="nav-logo-text">
+      <span class="zentexa"><span class="zen">ZENT</span><span class="texa">EXA</span>&ensp;</span><span class="svc">Services</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#whyus">Why Us</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#ai-automation">AI Automation</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in Touch</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge">&#10024; New-Age BPO — AI-First &amp; Owner-Led</div>
+    <h1>Where <span class="highlight">Efficiency</span><br>Meets Excellence</h1>
+    <p>We combine human expertise with advanced AI tools to deliver Data, HR, Web, and AI Automation solutions — with owner-led quality, 24-hour turnaround, and complete transparency. No black-box outsourcing. Ever.</p>
+    <div class="hero-btns">
+      <a href="#whyus" class="btn-primary">Why Choose Us</a>
+      <a href="#contact" class="btn-outline">Talk to Us</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item"><div class="stat-num">AI+Human</div><div class="stat-label">SMART WORKFLOWS</div></div>
+      <div class="stat-item"><div class="stat-num">24hrs</div><div class="stat-label">FAST TURNAROUND</div></div>
+      <div class="stat-item"><div class="stat-num">4-in-1</div><div class="stat-label">DATA+HR+WEB+AI</div></div>
+      <div class="stat-item"><div class="stat-num">Direct</div><div class="stat-label">OWNER-LED DELIVERY</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <span class="section-tag">About Us</span>
+      <h2 class="section-title">Your Modern<br>Outsourcing Partner</h2>
+      <p class="section-sub">Zentexa Services is a Belagavi-based startup founded to redefine outsourcing. We don't just "do work"; we optimize it using smart AI tools and a lean, agile workflow to give your business a competitive edge.</p>
+      <div class="about-points">
+        <div class="about-point"><div class="icon">&#129302;</div><div><h4>AI-Powered Accuracy</h4><p>We leverage advanced AI tools to automate repetitive tasks and ensure 100% data precision.</p></div></div>
+        <div class="about-point"><div class="icon">&#9889;</div><div><h4>Lightning Turnaround</h4><p>Being a fresh, agile team means we work faster than traditional BPOs with bloated hierarchies.</p></div></div>
+        <div class="about-point"><div class="icon">&#128205;</div><div><h4>Proudly Belagavi</h4><p>Operating from Karnataka to serve the world with a localized touch and global standards.</p></div></div>
+      </div>
+    </div>
+    <div class="about-visual reveal">
+      <div class="about-card"><div class="num">Fresh</div><p>STARTUP AGILITY</p></div>
+      <div class="about-card green"><div class="num">AI-First</div><p>MODERN WORKFLOW</p></div>
+      <div class="about-card accent"><div class="num">&#128205; Belagavi</div><p>Karnataka, India — Serving Globally</p></div>
+      <div class="about-card" style="background:#1a3a6e;"><div class="num">4</div><p>LANGUAGES: English, Hindi, Kannada, Marathi</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="whyus">
+  <div class="whyus-header reveal">
+    <span class="section-tag">Our Edge</span>
+    <h2 class="section-title">Why Zentexa Services?</h2>
+    <p class="section-sub">We’ve built our company from the ground up to be different. Here’s how we outperform the traditional "old-school" BPO model.</p>
+  </div>
+  <div class="whyus-grid">
+    <div class="why-card reveal">
+      <div class="why-icon">&#129302;</div>
+      <h3>AI-Enhanced Workflow</h3>
+      <p>We use state-of-the-art AI tools to speed up data processing, coding, and recruitment screening. This allows us to deliver high-quality results in half the time.</p>
+      <span class="why-tag">Fast & Efficient</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#128081;</div>
+      <h3>Owner-Led Commitment</h3>
+      <p>As a new startup, every client is vital. The founder personally oversees and works on every project to ensure the highest standard of excellence.</p>
+      <span class="why-tag">Zero Quality Gaps</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#9889;</div>
+      <h3>Rapid Turnaround</h3>
+      <p>Traditional BPOs take days to approve a simple request. We operate in real-time. Most standard tasks are completed within 24 hours.</p>
+      <span class="why-tag">Lean & Agile</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#128203;</div>
+      <h3>Unified Service Hub</h3>
+      <p>Data, HR, and Web development all under one roof. No need to juggle different vendors; we provide a seamless, integrated experience.</p>
+      <span class="why-tag">Complete Support</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#127757;</div>
+      <h3>Multilingual Capability</h3>
+      <p>Serving diverse markets in English, Hindi, Kannada, and Marathi. Perfect for regional Indian operations and global outreach.</p>
+      <span class="why-tag">4 Languages</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#128200;</div>
+      <h3>Measurable ROI</h3>
+      <p>We don't just finish tasks; we provide structured reports and insights that show the value our AI-powered processes bring to your firm.</p>
+      <span class="why-tag">Results-Oriented</span>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="services-header reveal">
+    <span class="section-tag">What We Offer</span>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">AI-powered outsourcing solutions designed to help your business scale with precision and speed.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal"><div class="svc-icon">&#128202;</div><h3>Data Entry &amp; Validation</h3><p>AI-enhanced data cleaning and management using Excel, SQL, and Google Sheets for error-free datasets.</p><div class="svc-tags"><span class="svc-tag">AI-Assisted</span><span class="svc-tag">Excel</span><span class="svc-tag">SQL</span></div></div>
+    <div class="service-card reveal"><div class="svc-icon">&#127970;</div><h3>BPO &amp; Back-Office</h3><p>Modern back-office support including digital documentation and process automation to streamline your operations.</p><div class="svc-tags"><span class="svc-tag">Automation</span><span class="svc-tag">Admin</span></div></div>
+    <div class="service-card reveal"><div class="svc-icon">&#128105;&#8205;&#128188;</div><h3>HR &amp; Recruitment</h3><p>AI-driven resume screening and candidate tracking to find the best talent faster than manual methods.</p><div class="svc-tags"><span class="svc-tag">Recruitment</span><span class="svc-tag">Sourcing</span></div></div>
+    <div class="service-card reveal"><div class="svc-icon">&#128200;</div><h3>Power BI Analytics</h3><p>Transform raw data into beautiful dashboards using Power BI and AI insights for better business decisions.</p><div class="svc-tags"><span class="svc-tag">Power BI</span><span class="svc-tag">Dashboards</span></div></div>
+    <div class="service-card reveal"><div class="svc-icon">&#127760;</div><h3>Web Development</h3><p>Modern, responsive websites and landing pages built with clean code (HTML, CSS, JS) and AI optimization.</p><div class="svc-tags"><span class="svc-tag">HTML/CSS/JS</span><span class="svc-tag">Responsive</span></div></div>
+    <div class="service-card reveal"><div class="svc-icon">&#128172;</div><h3>Customer Support</h3><p>Multi-channel email and chat support with high responsiveness to ensure your customers feel valued.</p><div class="svc-tags"><span class="svc-tag">Email</span><span class="svc-tag">Chat</span></div></div>
+    <div class="service-card reveal"><div class="svc-icon">&#129302;</div><h3>Virtual Assistant</h3><p>Professional support for scheduling and task management, utilizing AI tools to keep your day organized.</p><div class="svc-tags"><span class="svc-tag">Agile Support</span><span class="svc-tag">Admin</span></div></div>
+    <div class="service-card reveal"><div class="svc-icon">&#127919;</div><h3>Lead Generation</h3><p>Advanced lead research and outreach to help you fill your sales pipeline with high-quality prospects.</p><div class="svc-tags"><span class="svc-tag">Prospecting</span><span class="svc-tag">Growth</span></div></div>
+    <div class="service-card reveal"><div class="svc-icon">&#128222;</div><h3>Inbound &amp; Outbound Calling</h3><p>Professional call handling services — inbound customer queries and outbound sales or follow-up calls managed with care.</p><div class="svc-tags"><span class="svc-tag">Inbound</span><span class="svc-tag">Outbound</span><span class="svc-tag">Call Center</span></div></div>
+  </div>
+</section>
+
+<!-- AI AUTOMATION SECTION -->
+<section id="ai-automation" style="background:linear-gradient(135deg,#061828 0%,#0A2A5E 60%,#0D5C3A 100%); padding:90px 5%;">
+  <div class="services-header reveal" style="text-align:center; margin-bottom:56px;">
+    <span class="section-tag" style="background:rgba(58,185,122,0.2);color:#3ab97a;">AI-Powered</span>
+    <h2 class="section-title" style="color:#fff;">AI Automation Solutions</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.65); margin:0 auto;">Next-generation automation tools that replace manual effort with intelligent, scalable systems — so your business runs 24/7.</p>
+  </div>
+  <div class="services-grid" style="max-width:1200px; margin:0 auto;">
+    <div class="why-card reveal">
+      <div class="why-icon">&#129302;</div>
+      <h3>AI Calling Agents</h3>
+      <p>Intelligent inbound and outbound AI voice agents that handle calls automatically — qualifying leads, answering FAQs, and booking appointments without human intervention.</p>
+      <span class="why-tag">Inbound &amp; Outbound</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#128172;</div>
+      <h3>AI Chatbots</h3>
+      <p>Smart AI chatbots for your website or WhatsApp that engage customers instantly, answer queries, and capture leads — 24 hours a day, 7 days a week.</p>
+      <span class="why-tag">24/7 Engagement</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#128197;</div>
+      <h3>Automated Appointment Booking</h3>
+      <p>Let AI handle your scheduling — automated booking systems that confirm, remind, and reschedule appointments without any manual follow-up needed.</p>
+      <span class="why-tag">Zero Manual Work</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#128260;</div>
+      <h3>Smart Follow-Up Systems</h3>
+      <p>Automated follow-up sequences via email, WhatsApp, or SMS that nurture leads and keep customers engaged without any manual effort from your team.</p>
+      <span class="why-tag">Lead Nurturing</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#128203;</div>
+      <h3>CRM Updates &amp; Integration</h3>
+      <p>Automatic CRM data entry, updates, and pipeline management so your sales team always has accurate, real-time information at their fingertips.</p>
+      <span class="why-tag">CRM Automation</span>
+    </div>
+    <div class="why-card reveal">
+      <div class="why-icon">&#9889;</div>
+      <h3>Post-Call Workflow Automation</h3>
+      <p>Automatically trigger actions after every call — send summaries, update records, assign tasks, and move deals forward without lifting a finger.</p>
+      <span class="why-tag">Workflow Triggers</span>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <div class="portfolio-header reveal">
+    <span class="section-tag">Our Capabilities</span>
+    <h2 class="section-title">Core Competencies</h2>
+    <p class="section-sub">A look at the professional systems and solutions we specialize in building for our clients.</p>
+  </div>
+  <div class="portfolio-grid">
+    <div class="portfolio-card reveal"><div class="port-img blue">&#128202;</div><div class="port-body"><div class="port-type">Data Operations</div><h3>Automated Trackers</h3><p>Excel-based management systems with automated logic for real-time reporting.</p></div></div>
+    <div class="portfolio-card reveal"><div class="port-img green">&#128105;&#8205;&#128188;</div><div class="port-body"><div class="port-type">HR Support</div><h3>Recruitment Pipelines</h3><p>Structured candidate flow systems to manage hiring from sourcing to onboarding.</p></div></div>
+    <div class="portfolio-card reveal"><div class="port-img teal">&#128172;</div><div class="port-body"><div class="port-type">Customer Support</div><h3>Ticketing Workflows</h3><p>Efficient multi-channel resolution systems for superior customer satisfaction.</p></div></div>
+    <div class="portfolio-card reveal"><div class="port-img purple">&#128200;</div><div class="port-body"><div class="port-type">Analytics</div><h3>Business Insights</h3><p>Data visualization that turns complex numbers into clear, readable growth trends.</p></div></div>
+    <div class="portfolio-card reveal"><div class="port-img orange">&#127919;</div><div class="port-body"><div class="port-type">Lead Gen</div><h3>Targeted Research</h3><p>Comprehensive B2B data mining and prospect building for high-growth firms.</p></div></div>
+    <div class="portfolio-card reveal"><div class="port-img dark">&#127760;</div><div class="port-body"><div class="port-type">Web Development</div><h3>Modern Landing Pages</h3><p>Conversion-focused web experiences built with modern front-end technologies.</p></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <span class="section-tag">Get In Touch</span>
+      <h2 class="section-title">Let's Build Your<br>Future Together</h2>
+      <p>Ready to experience AI-powered efficiency? Contact us today, and we'll respond within 24 hours.</p>
+      <div class="contact-item"><div class="contact-icon">&#128231;</div><div><h4>Email</h4><p>zentexa.services@gmail.com</p></div></div>
+      <div class="contact-item"><div class="contact-icon">&#128205;</div><div><h4>Location</h4><p>Belagavi, Karnataka, India</p></div></div>
+      <div class="contact-item"><div class="contact-icon">&#128279;</div><div><h4>LinkedIn</h4><p>linkedin.com/company/zentexa-services</p></div></div>
+      <div class="contact-item"><div class="contact-icon">&#127759;</div><div><h4>Availability</h4><p>Mon – Sat, 9 AM – 7 PM IST</p></div></div>
+    </div>
+    <div class="contact-form reveal">
+      <h3>Send Us a Message</h3>
+      <div class="form-row">
+        <div class="form-group"><label>Your Name *</label><input type="text" id="fname" placeholder="John Doe"></div>
+        <div class="form-group"><label>Email Address *</label><input type="email" id="femail" placeholder="john@company.com"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Contact Number *</label><input type="tel" id="fphone" placeholder="+91 98765 43210"></div>
+        <div class="form-group"><label>Company / Organization</label><input type="text" id="fcompany" placeholder="Your Company Name"></div>
+      </div>
+      <div class="form-group"><label>Service Required *</label>
+        <select id="fservice">
+          <option value="">Select a Service</option>
+          <option>Data Entry &amp; Validation</option>
+          <option>BPO &amp; Back-Office</option>
+          <option>HR &amp; Recruitment Support</option>
+          <option>Power BI Reporting</option>
+          <option>Web Development</option>
+          <option>Customer Support</option>
+          <option>Virtual Assistant</option>
+          <option>Lead Generation</option>
+          <option>Multiple Services</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Your Message *</label><textarea id="fmessage" placeholder="Tell us about your project..."></textarea></div>
+      <button class="form-submit" onclick="submitForm()">Send Message &#8594;</button>
+      <div class="form-success" id="fsuccess">&#9989; Thank you! We'll get back to you within 24 hours.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><span class="zen">ZENT</span><span class="texa">EXA</span>&ensp;<span class="svc">SERVICES</span></div>
+      <p>AI-Powered Excellence. Owner-led BPO delivering modern Data, HR, and Web solutions from Belagavi, India.</p>
+    </div>
+    <div class="footer-col">
+      <h4>SERVICES</h4>
+      <ul>
+        <li><a href="#services">Data Entry</a></li>
+        <li><a href="#services">BPO Support</a></li>
+        <li><a href="#services">HR Outsourcing</a></li>
+        <li><a href="#services">Power BI</a></li>
+        <li><a href="#services">Web Development</a></li>
+        <li><a href="#services">Virtual Assistant</a></li>
+        <li><a href="#services">Inbound & Outbound Calling</a></li>
+        <li><a href="#ai-automation">AI Automation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>COMPANY</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#whyus">Why Us</a></li>
+        <li><a href="#portfolio">Competencies</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="mailto:zentexa.services@gmail.com">Email Us</a></li>
+        <li><a href="https://linkedin.com/company/zentexa-services" target="_blank">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&#169; 2026 Zentexa Services. All Rights Reserved. | Belagavi, Karnataka, India</p>
+    <p>zentexa.services@gmail.com</p>
+  </div>
+</footer>
+
+<script>
+// SCROLL REVEAL
+window.addEventListener('load', function() {
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) return;
+  items.forEach(function(el) { el.classList.add('hide'); });
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove('hide');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
+  items.forEach(function(el) { io.observe(el); });
+  setTimeout(function() {
+    document.querySelectorAll('.reveal.hide').forEach(function(el) { el.classList.remove('hide'); });
+  }, 1500);
+});
+
+// NAV SHADOW
+window.addEventListener('scroll', function() {
+  document.querySelector('nav').style.boxShadow =
+    window.scrollY > 50 ? '0 4px 24px rgba(0,0,0,0.3)' : 'none';
+});
+
+// MOBILE MENU
+function toggleMenu() {
+  var links = document.querySelector('.nav-links');
+  if (links.style.display === 'flex') {
+    links.style.display = 'none';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:#0A2A5E;padding:24px;gap:20px;z-index:998;';
+  }
+}
+
+// FORM
+function submitForm() {
+  var name    = document.getElementById('fname').value.trim();
+  var email   = document.getElementById('femail').value.trim();
+  var phone   = document.getElementById('fphone').value.trim();
+  var company = document.getElementById('fcompany').value.trim();
+  var service = document.getElementById('fservice').value;
+  var message = document.getElementById('fmessage').value.trim();
+
+  if (!name || !email || !phone || !service || !message) {
+    alert('Please fill in all required fields.');
+    return;
+  }
+  if (!email.includes('@')) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  // Send to your Gmail via Formspree
+  fetch('https://formspree.io/f/xgordwok', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      phone: phone,
+      company: company,
+      service: service,
+      message: message
+    })
+  })
+  .then(function(response) {
+    if (response.ok) {
+      document.getElementById('fsuccess').style.display = 'block';
+      ['fname','femail','fphone','fcompany','fservice','fmessage'].forEach(function(id) {
+        document.getElementById(id).value = '';
+      });
+    } else {
+      alert('Something went wrong. Please email us directly at zentexa.services@gmail.com');
+    }
+  })
+  .catch(function() {
+    alert('Network error. Please email us at zentexa.services@gmail.com');
+  });
+}
+
+</script>
+</body>
+</html>
