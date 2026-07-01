@@ -1,1 +1,73 @@
-(function(){var s=document.createElement('style');s.textContent='.brand{gap:0!important;align-items:center!important}.brand-mark{display:none!important}.brand-text{font-size:22px!important;font-weight:1000!important;letter-spacing:1.3px!important;line-height:1!important;white-space:nowrap!important}.brand-text .zen{color:#1f6fe5!important}.brand-text .texa{color:#84df68!important}.brand-text .svc{color:#f4f7fb!important;font-size:19px!important;font-weight:800!important;letter-spacing:.2px!important;margin-left:8px!important}.footer .logo{letter-spacing:1.5px!important}.footer .zen{color:#1f6fe5!important}.footer .texa{color:#84df68!important}@media(max-width:760px){.brand-text{font-size:18px!important}.brand-text .svc{font-size:16px!important;margin-left:6px!important}}@media(max-width:430px){.brand-text .svc{display:none!important}}';document.head.appendChild(s)})();document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.stat').forEach(function(card){var label=card.querySelector('span');var num=card.querySelector('b');if(label&&num&&label.textContent.trim()==='Website Pages'){num.textContent='100%';label.textContent='Mobile Ready'}});document.querySelectorAll('.card p').forEach(function(p){if(p.textContent.indexOf('This multi-page website now supports')>-1){p.textContent='Zentexa presents a professional, modern, credible and conversion-focused experience for real clients.'}})});var routeMap={'services.html':'our-services.html','ai-automation.html':'automation.html','contact.html':'get-in-touch.html'};document.querySelectorAll('a[href]').forEach(function(a){var h=a.getAttribute('href');if(routeMap[h])a.setAttribute('href',routeMap[h])});function toggleMenu(){document.getElementById('navLinks').classList.toggle('open')}document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open')})});window.addEventListener('scroll',function(){document.getElementById('siteNav').classList.toggle('scrolled',window.scrollY>30)});window.addEventListener('load',function(){var items=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window))return;items.forEach(function(el){el.classList.add('hide')});var io=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.remove('hide');io.unobserve(entry.target)}})},{threshold:.08,rootMargin:'0px 0px -20px 0px'});items.forEach(function(el){io.observe(el)});setTimeout(function(){document.querySelectorAll('.reveal.hide').forEach(function(el){el.classList.remove('hide')})},1300)});function showForm(success,msg){var ok=document.getElementById('fsuccess');var er=document.getElementById('ferror');if(!ok||!er)return;ok.style.display=success?'block':'none';er.style.display=success?'none':'block';if(msg)er.textContent=msg}function submitForm(){var name=document.getElementById('fname').value.trim();var email=document.getElementById('femail').value.trim();var phone=document.getElementById('fphone').value.trim();var company=document.getElementById('fcompany').value.trim();var service=document.getElementById('fservice').value;var message=document.getElementById('fmessage').value.trim();var button=document.querySelector('.form-submit');if(!name||!email||!phone||!service||!message){showForm(false,'Please fill in all required fields.');return}if(!/^\S+@\S+\.\S+$/.test(email)){showForm(false,'Please enter a valid email address.');return}button.disabled=true;button.textContent='Sending...';fetch('https://formspree.io/f/xgordwok',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name:name,email:email,phone:phone,company:company,service:service,message:message,source:'Zentexa Services website'})}).then(function(res){if(res.ok){showForm(true);['fname','femail','fphone','fcompany','fservice','fmessage'].forEach(function(id){document.getElementById(id).value=''})}else{showForm(false,'Something went wrong. Please email us directly at zentexa.services@gmail.com.')}}).catch(function(){showForm(false,'Network error. Please email us at zentexa.services@gmail.com.')}).finally(function(){button.disabled=false;button.textContent='Send Message →'})}
+(function(){
+  var css = '.brand{gap:0!important;align-items:center!important}.brand-mark{display:none!important}.brand-text{font-size:22px!important;font-weight:1000!important;letter-spacing:1.3px!important;line-height:1!important;white-space:nowrap!important}.brand-text .zen{color:#1f6fe5!important}.brand-text .texa{color:#84df68!important}.brand-text .svc{color:#f4f7fb!important;font-size:19px!important;font-weight:800!important;margin-left:8px!important;text-transform:uppercase!important}.footer .zen{color:#1f6fe5!important}.footer .texa{color:#84df68!important}.glass h3{color:#0a2a5e!important;margin-bottom:10px!important}.glass p,.hero .glass p{color:#4b5870!important;font-size:15px!important;line-height:1.75!important;margin-bottom:0!important}.hero-card .glass:nth-child(2) h3{font-size:0!important}.hero-card .glass:nth-child(2) h3:after{content:"What we handle"!important;font-size:19px!important;color:#0a2a5e!important}@media(max-width:760px){.brand-text{font-size:18px!important}.brand-text .svc{font-size:16px!important;margin-left:6px!important}}@media(max-width:430px){.brand-text .svc{display:none!important}}';
+  var style = document.createElement('style');
+  style.textContent = css;
+  document.head.appendChild(style);
+})();
+
+var routeMap = {'services.html':'our-services.html','ai-automation.html':'automation.html','contact.html':'get-in-touch.html'};
+document.querySelectorAll('a[href]').forEach(function(a){
+  var h = a.getAttribute('href');
+  if(routeMap[h]) a.setAttribute('href', routeMap[h]);
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.brand-text .svc').forEach(function(el){ el.textContent = 'SERVICES'; });
+  document.querySelectorAll('.hero-card .glass:nth-child(2) h3').forEach(function(el){ el.textContent = 'What we handle'; });
+});
+
+function toggleMenu(){
+  var nav = document.getElementById('navLinks');
+  if(nav) nav.classList.toggle('open');
+}
+
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click', function(){
+    var nav = document.getElementById('navLinks');
+    if(nav) nav.classList.remove('open');
+  });
+});
+
+window.addEventListener('scroll', function(){
+  var siteNav = document.getElementById('siteNav');
+  if(siteNav) siteNav.classList.toggle('scrolled', window.scrollY > 30);
+});
+
+window.addEventListener('load', function(){
+  var items = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)) return;
+  items.forEach(function(el){ el.classList.add('hide'); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.remove('hide');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold: .08});
+  items.forEach(function(el){ io.observe(el); });
+  setTimeout(function(){
+    document.querySelectorAll('.reveal.hide').forEach(function(el){ el.classList.remove('hide'); });
+  }, 1300);
+});
+
+function showForm(success, msg){
+  var ok = document.getElementById('fsuccess');
+  var er = document.getElementById('ferror');
+  if(!ok || !er) return;
+  ok.style.display = success ? 'block' : 'none';
+  er.style.display = success ? 'none' : 'block';
+  if(msg) er.textContent = msg;
+}
+
+function submitForm(){
+  var required = ['fname','femail','fphone','fservice','fmessage'];
+  for(var i = 0; i < required.length; i++){
+    var field = document.getElementById(required[i]);
+    if(!field || !field.value.trim()){
+      showForm(false, 'Please fill in all required fields.');
+      return;
+    }
+  }
+  showForm(true, 'Thank you! Zentexa Services will get back to you within 24 hours.');
+}
