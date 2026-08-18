@@ -1,0 +1,18 @@
+.hero h1{font-size:clamp(42px,5vw,50px)}
+.page-hero h1{font-size:clamp(38px,4.2vw,44px)}
+.title{font-size:clamp(27px,2.8vw,30px)}
+.hero-card h3,
+.card h3,
+.dark-card h3,
+.price-card h3{font-size:18px}
+.contact-card>h3{font-size:24px!important}
+@media(max-width:760px){
+  .hero h1{font-size:38px}
+  .page-hero h1{font-size:36px}
+  .title{font-size:27px}
+  .hero-card h3,
+  .card h3,
+  .dark-card h3,
+  .price-card h3{font-size:17px}
+  .contact-card>h3{font-size:22px!important}
+}
