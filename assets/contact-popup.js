@@ -51,6 +51,8 @@
       source:'Zentexa Services 30-second website popup'
     };
     if(!payload.name||!payload.email||!payload.phone||!payload.service||!payload.message){showStatus('Please fill in all required fields.','error');return;}
+    if(payload.name.length>120||payload.email.length>254||payload.phone.length>32||payload.company.length>160||payload.message.length>3000){showStatus('Please shorten your information and try again.','error');return;}
+    var digits=payload.phone.replace(/\D/g,'');if(digits.length<7||digits.length>15){showStatus('Please enter a valid contact number.','error');return;}
     var btn=form.querySelector('.zen-popup-submit');
     submitting=true;btn.disabled=true;btn.textContent='Sending...';
     fetch('https://formspree.io/f/xgordwok',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
@@ -70,15 +72,15 @@
       '<h2 id="zen-popup-title">Send a Message</h2>'+
       '<form id="zen-popup-form">'+
       '<div class="zen-popup-grid">'+
-        '<div class="zen-popup-field"><label for="zen-name">Your Name *</label><input id="zen-name" name="name" autocomplete="name" placeholder="Your name" required></div>'+
-        '<div class="zen-popup-field"><label for="zen-email">Email Address *</label><input id="zen-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required></div>'+
-        '<div class="zen-popup-field"><label for="zen-phone">Contact Number *</label><input id="zen-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210" required></div>'+
-        '<div class="zen-popup-field"><label for="zen-company">Company / Organization</label><input id="zen-company" name="company" autocomplete="organization" placeholder="Company name"></div>'+
+        '<div class="zen-popup-field"><label for="zen-name">Your Name *</label><input id="zen-name" name="name" maxlength="120" autocomplete="name" placeholder="Your name" required></div>'+
+        '<div class="zen-popup-field"><label for="zen-email">Email Address *</label><input id="zen-email" name="email" maxlength="254" type="email" autocomplete="email" placeholder="name@company.com" required></div>'+
+        '<div class="zen-popup-field"><label for="zen-phone">Contact Number *</label><input id="zen-phone" name="phone" maxlength="32" type="tel" autocomplete="tel" placeholder="+91 98765 43210" required></div>'+
+        '<div class="zen-popup-field"><label for="zen-company">Company / Organization</label><input id="zen-company" name="company" maxlength="160" autocomplete="organization" placeholder="Company name"></div>'+
       '</div>'+
       '<div class="zen-popup-field"><label for="zen-service">Service / Product *</label><select id="zen-service" name="service" required>'+
         '<option value="">Select an option</option><option>Ice Cream Distribution Manager Demo</option><option>Data Entry</option><option>Back-Office Support</option><option>Customer Support</option><option>Business Research</option><option>HR Support</option><option>Dashboard</option><option>Web Development</option><option>Automation</option>'+
       '</select></div>'+
-      '<div class="zen-popup-field"><label for="zen-details">Project Details *</label><textarea id="zen-details" name="message" placeholder="Tell us about your project, workflow, timeline or demo requirement..." required></textarea></div>'+
+      '<div class="zen-popup-field"><label for="zen-details">Project Details *</label><textarea id="zen-details" name="message" maxlength="3000" placeholder="Tell us about your project, workflow, timeline or demo requirement..." required></textarea></div>'+
       '<button class="zen-popup-submit" type="submit">Send Message →</button>'+
       '<div class="zen-popup-status" id="zen-popup-status" role="status" aria-live="polite"></div>'+
       '</form></div>';
