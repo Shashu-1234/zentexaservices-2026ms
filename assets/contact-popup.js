@@ -3,7 +3,7 @@
   var startKey='zentexaPopupVisitStartV1';
   var dismissedKey='zentexaPopupDismissedV1';
   var openedKey='zentexaPopupOpenedV1';
-  var delayMs=30000;
+  var delayMs=60000;
   var elapsed=false,previousFocus=null,submitting=false;
   function getSaved(key){try{return sessionStorage.getItem(key);}catch(error){return null;}}
   function save(key,value){try{sessionStorage.setItem(key,value);}catch(error){}}
