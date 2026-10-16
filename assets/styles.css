@@ -25,3 +25,6 @@
 /* Keep anchored client feedback visible beneath the fixed header. */
 #client-feedback{scroll-margin-top:90px}
 @media(max-width:900px){#client-feedback{scroll-margin-top:80px}}
+
+/* Separate the homepage Client Feedback and Start Today sections. */
+#client-feedback + .section.soft{background:#fff;border-top:2px solid #c8e4db}
