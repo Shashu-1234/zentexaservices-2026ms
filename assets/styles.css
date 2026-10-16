@@ -21,3 +21,7 @@
 .client-review-section--project{background:linear-gradient(135deg,#f7fbff,#f3fbf7)}
 @media(max-width:900px){.client-review-grid{grid-template-columns:1fr;gap:28px}.client-review-intro .lead{max-width:680px}}
 @media(max-width:600px){.client-review-card,.client-review-card--full{padding:22px 19px;border-radius:19px}.client-review-card--full{margin-top:22px}.client-review-quote{font-size:14px;line-height:1.8}.client-review-google{font-size:11px}.client-review-stars{margin:16px 0 12px}}
+
+/* Keep anchored client feedback visible beneath the fixed header. */
+#client-feedback{scroll-margin-top:90px}
+@media(max-width:900px){#client-feedback{scroll-margin-top:80px}}
