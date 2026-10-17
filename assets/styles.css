@@ -28,3 +28,6 @@
 
 /* Separate the homepage Client Feedback and Start Today sections. */
 #client-feedback + .section.soft{background:#fff;border-top:2px solid #c8e4db}
+
+/* Authentic WhatsApp icon; preserve floating button sizing and placement. */
+.wa-float .wa-icon{display:block;width:20px;height:20px;flex:none;fill:currentColor}
