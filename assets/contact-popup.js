@@ -1,21 +1,14 @@
 (function(){
   'use strict';
-  var startKey='zentexaPopupVisitStartV1';
-  var dismissedKey='zentexaPopupDismissedV1';
-  var openedKey='zentexaPopupOpenedV1';
   var delayMs=60000;
-  var elapsed=false,previousFocus=null,submitting=false;
-  function getSaved(key){try{return sessionStorage.getItem(key);}catch(error){return null;}}
-  function save(key,value){try{sessionStorage.setItem(key,value);}catch(error){}}
-  function removeSaved(key){try{sessionStorage.removeItem(key);}catch(error){}}
+  var elapsed=false,previousFocus=null,submitting=false,dismissed=false;
   function contactPageActive(){return (location.pathname==='/get-in-touch.html'||location.pathname==='/contact.html')&&!!document.getElementById('fmessage');}
   function closePopup(){
     var layer=document.getElementById('zen-contact-popup');
     if(layer)layer.remove();
     document.body.classList.remove('zen-popup-open');
     document.removeEventListener('keydown',handleKeys,true);
-    save(dismissedKey,'1');
-    removeSaved(openedKey);
+    dismissed=true;
     if(previousFocus&&document.contains(previousFocus)&&typeof previousFocus.focus==='function')previousFocus.focus({preventScroll:true});
   }
   function handleKeys(event){
@@ -48,7 +41,7 @@
       company:String(fields.get('company')||'').trim(),
       service:String(fields.get('service')||'').trim(),
       message:String(fields.get('message')||'').trim(),
-      source:'Zentexa Services 30-second website popup'
+      source:'Zentexa Services 60-second website popup'
     };
     if(!payload.name||!payload.email||!payload.phone||!payload.service||!payload.message){showStatus('Please fill in all required fields.','error');return;}
     if(payload.name.length>120||payload.email.length>254||payload.phone.length>32||payload.company.length>160||payload.message.length>3000){showStatus('Please shorten your information and try again.','error');return;}
@@ -61,7 +54,7 @@
       .finally(function(){submitting=false;btn.disabled=false;btn.textContent='Send Message →';});
   }
   function showPopup(){
-    if(getSaved(dismissedKey)==='1'||contactPageActive())return;
+    if(dismissed||contactPageActive())return;
     var existing=document.getElementById('zen-contact-popup');
     if(existing){document.body.classList.add('zen-popup-open');return;}
     previousFocus=document.activeElement;
@@ -86,25 +79,19 @@
       '</form></div>';
     document.body.appendChild(layer);
     document.body.classList.add('zen-popup-open');
-    save(openedKey,'1');
     layer.querySelector('.zen-popup-close').addEventListener('click',closePopup);
     layer.querySelector('form').addEventListener('submit',onSubmit);
     document.addEventListener('keydown',handleKeys,true);
     layer.querySelector('.zen-popup-close').focus({preventScroll:true});
   }
   function onPageChange(){
-    if(getSaved(dismissedKey)==='1')return;
+    if(dismissed)return;
     if(document.getElementById('zen-contact-popup')){document.body.classList.add('zen-popup-open');return;}
-    if(elapsed||getSaved(openedKey)==='1')showPopup();
+    if(elapsed)showPopup();
   }
   window.zentexaPopupPageChange=onPageChange;
   function init(){
-    if(getSaved(dismissedKey)==='1')return;
-    var start=Number(getSaved(startKey));
-    if(!start||start>Date.now()){start=Date.now();save(startKey,String(start));}
-    var remaining=Math.max(0,delayMs-(Date.now()-start));
-    if(getSaved(openedKey)==='1')remaining=0;
-    window.setTimeout(function(){elapsed=true;onPageChange();},remaining);
+    window.setTimeout(function(){elapsed=true;onPageChange();},delayMs);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
