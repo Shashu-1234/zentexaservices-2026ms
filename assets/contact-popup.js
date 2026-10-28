@@ -71,7 +71,7 @@
         '<div class="zen-popup-field"><label for="zen-company">Company / Organization</label><input id="zen-company" name="company" maxlength="160" autocomplete="organization" placeholder="Company name"></div>'+
       '</div>'+
       '<div class="zen-popup-field"><label for="zen-service">Service / Product *</label><select id="zen-service" name="service" required>'+
-        '<option value="">Select an option</option><option>Ice Cream Distribution Manager Demo</option><option>Data Entry</option><option>Back-Office Support</option><option>Customer Support</option><option>Business Research</option><option>HR Support</option><option>Dashboard</option><option>Web Development</option><option>Automation</option>'+
+        '<option value="">Select an option</option><option>Ice Cream Distribution Manager Demo</option><option>Data Entry</option><option>Back-Office Support</option><option>Customer Support</option><option>Business Research</option><option>HR Support</option><option>Dashboard</option><option>Web Development</option><option>Automation</option><option>AI Calling Agents</option><option>Agentic Systems</option>'+ 
       '</select></div>'+
       '<div class="zen-popup-field"><label for="zen-details">Project Details *</label><textarea id="zen-details" name="message" maxlength="3000" placeholder="Tell us about your project, workflow, timeline or demo requirement..." required></textarea></div>'+
       '<button class="zen-popup-submit" type="submit">Send Message →</button>'+
