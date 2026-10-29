@@ -1,7 +1,14 @@
 (function(){
   'use strict';
   var delayMs=60000;
+  var seenKey='zentexaContactPopupSeenV1';
   var elapsed=false,previousFocus=null,submitting=false,dismissed=false;
+  function wasAlreadyShown(){
+    try{return localStorage.getItem(seenKey)==='1';}catch(error){return false;}
+  }
+  function rememberShown(){
+    try{localStorage.setItem(seenKey,'1');}catch(error){}
+  }
   function contactPageActive(){return (location.pathname==='/get-in-touch.html'||location.pathname==='/contact.html')&&!!document.getElementById('fmessage');}
   function closePopup(){
     var layer=document.getElementById('zen-contact-popup');
@@ -57,6 +64,7 @@
     if(dismissed||contactPageActive())return;
     var existing=document.getElementById('zen-contact-popup');
     if(existing){document.body.classList.add('zen-popup-open');return;}
+    if(wasAlreadyShown())return;
     previousFocus=document.activeElement;
     var layer=document.createElement('div');
     layer.id='zen-contact-popup';layer.className='zen-popup-layer';
@@ -78,6 +86,7 @@
       '<div class="zen-popup-status" id="zen-popup-status" role="status" aria-live="polite"></div>'+
       '</form></div>';
     document.body.appendChild(layer);
+    rememberShown();
     document.body.classList.add('zen-popup-open');
     layer.querySelector('.zen-popup-close').addEventListener('click',closePopup);
     layer.querySelector('form').addEventListener('submit',onSubmit);
@@ -87,10 +96,11 @@
   function onPageChange(){
     if(dismissed)return;
     if(document.getElementById('zen-contact-popup')){document.body.classList.add('zen-popup-open');return;}
-    if(elapsed)showPopup();
+    if(elapsed&&!wasAlreadyShown())showPopup();
   }
   window.zentexaPopupPageChange=onPageChange;
   function init(){
+    if(wasAlreadyShown())return;
     window.setTimeout(function(){elapsed=true;onPageChange();},delayMs);
   }
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
