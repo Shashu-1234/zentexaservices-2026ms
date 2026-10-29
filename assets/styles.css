@@ -31,3 +31,6 @@
 
 /* Authentic WhatsApp icon; preserve floating button sizing and placement. */
 .wa-float .wa-icon{display:block;width:20px;height:20px;flex:none;fill:currentColor}
+
+/* Preview only: make internal-page gradient hero fill the viewport like Home. */
+.page-hero{min-height:100vh;min-height:100svh;display:flex;align-items:center}
