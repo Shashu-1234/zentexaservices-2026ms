@@ -31,3 +31,202 @@
 
 /* Authentic WhatsApp icon; preserve floating button sizing and placement. */
 .wa-float .wa-icon{display:block;width:20px;height:20px;flex:none;fill:currentColor}
+
+
+/* STANDALONE PREVIEW — Six distinct inner-page hero identities. Not production. */
+.signature-hero.page-hero{position:relative;min-height:0;overflow:hidden;isolation:isolate;padding:0}
+.signature-hero.page-hero:before{display:none}
+.signature-hero .signature-inner{position:relative;z-index:1}
+.signature-hero .signature-overline{display:flex;align-items:center;gap:13px;margin-bottom:36px;font:800 10px/1.4 "DM Sans",Arial,sans-serif;letter-spacing:1.6px}
+.signature-hero .signature-index{white-space:nowrap}
+.signature-hero .signature-rule{height:1px;width:38px;opacity:.55;background:currentColor}
+.signature-hero .signature-overline>span:last-child{opacity:.65}
+.signature-hero h1{font-family:"Playfair Display",Georgia,serif;letter-spacing:-1.4px;line-height:1.08;margin-bottom:24px}
+.signature-hero p{line-height:1.75}
+.signature-hero .signature-text-link,.signature-hero .directory-explore,.signature-hero .work-action,.signature-hero .pricing-action,.signature-hero .contact-action{display:inline-flex;align-items:center;gap:22px;text-decoration:none;font-weight:800;font-size:14px;margin-top:30px;padding:12px 0;border-bottom:1px solid currentColor;transition:gap .2s ease}
+.signature-hero .signature-text-link:hover,.signature-hero .directory-explore:hover,.signature-hero .work-action:hover,.signature-hero .pricing-action:hover,.signature-hero .contact-action:hover{gap:32px}
+.signature-hero .signature-text-link>span,.signature-hero .directory-explore>span,.signature-hero .work-action>span,.signature-hero .pricing-action>span,.signature-hero .contact-action>span{font-size:21px;font-weight:400}
+#story-content,#services-catalog,#projects-content,#contact-content{scroll-margin-top:74px}
+
+/* 01 ABOUT — warm paper, editorial lettering and company manifesto */
+.signature-hero.story-hero{background:#f4f0e6;color:#172946;min-height:700px;padding:152px 0 82px}
+.story-hero:after{content:"";position:absolute;width:430px;height:430px;right:8%;top:-190px;border-radius:50%;background:#e9e1ce;opacity:.65;pointer-events:none}
+.story-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:center}
+.story-copy h1{font-size:clamp(45px,5vw,76px);letter-spacing:-2px}
+.story-copy h1 span{color:#537364}
+.story-copy h1 i{font-weight:700;color:#126e57}
+.story-hero .story-copy p{max-width:555px;color:#56667b;font-size:17px}
+.story-hero .signature-overline{color:#285c53}
+.story-kicker{display:inline-block;color:#687069;font-size:13px;font-weight:700;letter-spacing:.15px;margin-bottom:14px}
+.story-hero .signature-text-link{color:#124d3f}
+.story-manifesto{background:#163a3b;border-radius:5px;color:#fff;transform:rotate(1.6deg);min-height:388px;padding:24px 26px;box-shadow:22px 24px 0 #e3dcca,0 26px 45px rgba(38,66,63,.13);display:flex;flex-direction:column;justify-content:space-between}
+.story-manifesto-head,.story-manifesto-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:10px;font-weight:800;letter-spacing:1.4px;color:#b9d8ce}
+.story-manifesto-body{position:relative;padding:24px 0 18px}
+.story-monogram{font:bold 96px/1 Georgia,serif;color:#73e8b0;letter-spacing:-10px}
+.story-manifesto-body p{font-family:"Playfair Display",Georgia,serif;font-size:clamp(20px,2.2vw,30px);line-height:1.4;color:#f3f7f2}
+.story-manifesto-footer{padding-top:20px;border-top:1px solid rgba(255,255,255,.22);font-size:10px;letter-spacing:.1px}
+.story-manifesto-footer b{color:#85ffb1;margin-right:4px}
+
+/* 02 SERVICES — bright, structured capability index */
+.signature-hero.directory-hero{background:#eef5f6;color:#0b3240;padding:147px 0 94px;min-height:640px}
+.directory-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.9),transparent 52%),radial-gradient(circle at 8% 85%,rgba(81,196,172,.16),transparent 44%);pointer-events:none}
+.directory-layout{display:grid;grid-template-columns:.93fr 1.07fr;align-items:center;gap:70px}
+.directory-copy h1{font-size:clamp(42px,4.4vw,64px)}
+.directory-copy h1 span{color:#15926b}
+.directory-hero .directory-copy p{font-size:17px;color:#526d77;max-width:465px}
+.directory-hero .signature-overline{color:#1d7e68}
+.directory-hero .directory-explore{color:#127357}
+.directory-panel{border:1px solid #cadbdc;background:#fff;box-shadow:0 24px 65px rgba(32,93,91,.09);border-radius:16px;overflow:hidden}
+.directory-head{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#0f3c47;color:#a9eacd;padding:20px 24px;font-size:10px;font-weight:900;letter-spacing:1.4px}
+.directory-row{display:grid;grid-template-columns:46px 1fr 20px;align-items:center;gap:12px;padding:27px 24px;border-bottom:1px solid #e6eeee;color:#0b3540}
+.directory-row>span:last-child{font-size:22px;color:#17a779}
+.directory-number{font:700 25px/1 Georgia,serif;color:#a8d1ca}
+.directory-row div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.directory-row b{font-size:16px;line-height:1.25}
+.directory-row small{font-size:12px;line-height:1.5;color:#657d83}
+.directory-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:19px 24px;color:#47766b;font-size:10px;letter-spacing:1px;font-weight:900}
+.directory-foot span{font-size:21px;color:#16a979}
+
+/* 03 AUTOMATION — distinct dark process schematic rather than another split hero */
+.signature-hero.automation-hero{background:#071628;color:#fff;padding:137px 0 80px;min-height:670px}
+.automation-hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(54,127,146,.075) 80px),radial-gradient(ellipse at 78% 37%,rgba(35,133,172,.14),transparent 51%)}
+.automation-layout{display:flex;flex-direction:column;gap:42px}
+.automation-heading{text-align:center;max-width:880px;margin:0 auto}
+.automation-heading .signature-overline{justify-content:center;margin-bottom:23px;color:#7df3ca}
+.automation-heading h1{font-family:"DM Sans",Arial,sans-serif;font-size:clamp(39px,5.1vw,66px);font-weight:900;letter-spacing:-2.6px;margin-bottom:19px}
+.automation-heading h1 span{color:#68e6c0}
+.automation-hero .automation-heading p{font-size:16px;color:#adc2d6;max-width:750px;margin:auto}
+.automation-flow{border:1px solid #225465;border-radius:14px;overflow:hidden;background:#0e2638;box-shadow:0 18px 70px rgba(0,0,0,.27)}
+.automation-flow-header,.automation-flow-footer{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 22px;font-size:10px;font-weight:800;letter-spacing:1.5px;color:#8fc8d4;background:#0a1f30}
+.automation-flow-header>span:first-child{display:flex;align-items:center;gap:9px}
+.automation-led{height:7px;width:7px;background:#70ffad;box-shadow:0 0 10px rgba(112,255,173,.9);border-radius:50%;display:inline-block}
+.automation-flow-main{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:28px 22px}
+.automation-flow-step{display:flex;flex:1;min-width:0;min-height:156px;flex-direction:column;justify-content:center;gap:8px;background:#142f41;border:1px solid #294d5c;border-radius:11px;padding:14px}
+.automation-flow-step.automation-flow-primary{background:#163f48;border-color:#4bd6a4;box-shadow:0 0 27px rgba(39,194,156,.12)}
+.automation-step-icon{font-size:22px;color:#67e8ba}
+.automation-flow-step small{font-size:10px;letter-spacing:1px;color:#8cacbf}
+.automation-flow-step strong{font-size:13px;line-height:1.3;color:#fff}
+.automation-flow-step>span:last-child{font-size:11px;color:#9eb7c6;line-height:1.4}
+.automation-connector{color:#6ae7bc;font-size:19px;white-space:nowrap;letter-spacing:-4px}
+.automation-flow-footer{border-top:1px solid #225465}
+.automation-flow-footer a{color:#74f0c2;font-size:12px;letter-spacing:0}
+
+/* 04 PROJECTS — warm showcase inspired by printed coupons */
+.signature-hero.work-hero{min-height:655px;padding:140px 0 88px;background:#f8f5f0;color:#26312c}
+.work-layout{display:grid;grid-template-columns:1fr 1fr;gap:82px;align-items:center}
+.work-hero .signature-overline{color:#bb673f}
+.work-copy h1{font-size:clamp(48px,5.2vw,77px)}
+.work-copy h1 i{font-style:normal;color:#bd6542}
+.work-hero .work-copy p{font-size:17px;color:#74695e;max-width:430px}
+.work-hero .work-action{color:#a84e31}
+.work-display{position:relative;background:#e5dfd4;min-height:400px;border-radius:6px;padding:22px 40px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.work-display:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:1px solid #d0c7b9;right:-120px;top:-180px}
+.work-display-label,.work-display-bottom{display:flex;justify-content:space-between;align-items:center;gap:15px;font-size:10px;letter-spacing:1.2px;font-weight:900;color:#705d4d;position:relative;z-index:1}
+.work-ticket{align-self:center;transform:rotate(-5deg);width:min(100%,355px);background:#fffef9;border:1px solid #d2c4b2;box-shadow:16px 19px 0 #c9b5a0,0 17px 32px rgba(83,61,37,.14);border-radius:6px;position:relative;z-index:1}
+.work-ticket-top{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;background:#643c2f;color:#fff;font-size:11px;font-weight:900;letter-spacing:1.3px}
+.work-ticket-icon{font-size:18px;color:#e6b980}
+.work-ticket-main{padding:22px 22px 20px;display:flex;flex-direction:column;align-items:flex-start}
+.work-ticket-main small{font-size:9px;font-weight:900;letter-spacing:2px;color:#b05d43;margin-bottom:7px}
+.work-ticket-main strong{font:800 33px/1.07 "Playfair Display",Georgia,serif;color:#513b32}
+.work-ticket-main>span{font-size:11px;margin-top:12px;line-height:1.5;color:#795b51}
+.work-ticket-edge{border-top:2px dashed #d9c4af;margin:0 16px}
+.work-ticket-bottom{display:flex;align-items:center;justify-content:space-around;gap:5px;padding:14px;font-size:9px;font-weight:900;letter-spacing:.65px;color:#795044}
+
+/* 05 PRICING — almost-white minimal typography + engagement tracks */
+.signature-hero.pricing-hero{min-height:610px;padding:150px 0 95px;color:#25294b;background:#f9faff}
+.pricing-hero:after{content:"";position:absolute;width:330px;height:330px;right:-120px;top:0;border-radius:50%;background:#eae8fa}
+.pricing-layout{display:grid;grid-template-columns:1fr .9fr;gap:92px;align-items:center}
+.pricing-hero .signature-overline{color:#7166a6}
+.pricing-copy h1{font-family:"DM Sans",Arial,sans-serif;font-size:clamp(40px,4.65vw,66px);font-weight:900;letter-spacing:-2.2px}
+.pricing-copy h1 span{color:#8275c0}
+.pricing-hero .pricing-copy p{font-size:17px;color:#626c82;max-width:490px}
+.pricing-hero .pricing-action{color:#6354a1}
+.pricing-paths{position:relative;z-index:1;border:1px solid #dddff0;border-radius:19px;background:#fff;box-shadow:0 16px 52px rgba(57,56,99,.07);padding:10px 25px 17px}
+.pricing-paths-label{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:10px;font-weight:900;letter-spacing:1px;color:#6a619a}
+.pricing-paths-label span{font-size:21px}
+.pricing-path{display:grid;grid-template-columns:37px 1fr 22px;gap:12px;align-items:center;padding:21px 0;border-top:1px solid #e7e6f1}
+.pricing-path-number{font-size:11px;font-weight:900;color:#867ebd}
+.pricing-path>div{display:flex;flex-direction:column;gap:5px}
+.pricing-path strong{font-size:16px;color:#282e50}
+.pricing-path>div>span{font-size:12px;color:#69728a}
+.pricing-path-symbol{font-size:21px;color:#8279b5}
+.pricing-paths-note{border-top:1px solid #e7e6f1;padding-top:16px;font-size:9px;letter-spacing:1px;font-weight:800;color:#9595a5}
+
+/* 06 CONTACT — emerald concierge-style direct contact channels */
+.signature-hero.contact-hero{background:#0d3f3b;color:#fff;min-height:610px;padding:141px 0 88px}
+.contact-hero:after{content:"";position:absolute;width:900px;height:900px;right:-290px;top:-360px;border-radius:50%;border:1px solid rgba(173,244,212,.16);box-shadow:0 0 0 100px rgba(173,244,212,.035),0 0 0 210px rgba(173,244,212,.02);pointer-events:none}
+.contact-layout{display:grid;grid-template-columns:1.04fr .96fr;gap:80px;align-items:center}
+.contact-hero .signature-overline{color:#a7ffcb}
+.contact-copy h1{font-size:clamp(52px,5.5vw,82px)}
+.contact-copy h1 i{color:#a5ffd3}
+.contact-hero .contact-copy p{font-size:17px;color:#c1dfd5;max-width:450px}
+.contact-hero .contact-action{color:#a7ffcb}
+.contact-options{background:#f9fdfb;color:#193d38;border-radius:5px;box-shadow:20px 20px 0 rgba(91,181,149,.17);padding:25px 29px}
+.contact-options-top,.contact-options-foot{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:10px;font-weight:900;letter-spacing:1px;color:#387e66}
+.contact-options-top{padding-bottom:24px}
+.contact-options-top>span:last-child{font-size:26px;color:#41b78c}
+.contact-option{display:grid;grid-template-columns:46px 1fr 23px;align-items:center;gap:15px;padding:22px 0;border-top:1px solid #dae9e1}
+.contact-option-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#dbf8e9;font-size:24px;color:#157559}
+.contact-option>div{display:flex;flex-direction:column;min-width:0;gap:5px}
+.contact-option small{font-size:10px;letter-spacing:.7px;font-weight:800;color:#578375}
+.contact-option strong{font-size:clamp(12px,1.12vw,16px);color:#164c3e;overflow-wrap:anywhere}
+.contact-option>span:last-child{font-size:20px;color:#188468}
+.contact-option:hover>span:last-child{transform:translate(2px,-2px)}
+.contact-options-foot{padding-top:18px;border-top:1px solid #dae9e1;font-size:9px;color:#70978a}
+
+/* responsive per-page identities */
+@media(max-width:1050px){
+.story-layout,.directory-layout,.work-layout,.pricing-layout,.contact-layout{gap:38px}
+.signature-hero.story-hero,.signature-hero.directory-hero,.signature-hero.work-hero,.signature-hero.pricing-hero,.signature-hero.contact-hero{min-height:0}
+.automation-flow-main{gap:7px;padding:20px 13px}
+.automation-flow-step{padding:12px;min-height:151px}
+}
+@media(max-width:850px){
+.signature-hero.page-hero{padding:122px 0 66px}
+.story-layout,.directory-layout,.work-layout,.pricing-layout,.contact-layout{grid-template-columns:1fr;gap:41px}
+.story-copy h1,.directory-copy h1,.work-copy h1,.pricing-copy h1,.contact-copy h1{font-size:clamp(39px,7vw,60px)}
+.story-manifesto,.directory-panel,.work-display,.pricing-paths,.contact-options{width:100%;max-width:620px}
+.story-manifesto{transform:none;box-shadow:10px 13px 0 #e3dcca}
+.automation-layout{gap:31px}
+.automation-heading{text-align:left;max-width:none}
+.automation-heading .signature-overline{justify-content:flex-start}
+.automation-heading p{margin:0!important}
+.automation-flow-main{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.automation-connector{display:none}
+.automation-flow-step{min-height:133px}
+}
+@media(max-width:540px){
+.signature-hero.page-hero{padding:108px 0 55px}
+.signature-hero .signature-overline{font-size:9px;margin-bottom:23px;gap:10px}
+.signature-hero h1{letter-spacing:-1.1px;margin-bottom:17px}
+.signature-hero p{font-size:15px!important}
+.story-copy h1,.directory-copy h1,.work-copy h1,.pricing-copy h1,.contact-copy h1{font-size:clamp(34px,9vw,45px)}
+.story-kicker{font-size:12px}
+.story-manifesto{min-height:350px;padding:19px}
+.story-manifesto-body p{font-size:24px!important}
+.story-monogram{font-size:74px}
+.story-manifesto-footer{gap:6px;font-size:9px}
+.directory-row{padding:18px 14px;grid-template-columns:30px 1fr 15px}
+.directory-row b{font-size:14px}
+.directory-row small{font-size:11px}
+.directory-head,.directory-foot{padding:15px}
+.automation-heading h1{font-size:clamp(30px,8.2vw,43px);letter-spacing:-1.5px}
+.automation-flow-header,.automation-flow-footer{padding:13px;font-size:9px;letter-spacing:.5px}
+.automation-flow-main{grid-template-columns:1fr;gap:9px}
+.automation-flow-step{min-height:104px;display:grid;grid-template-columns:25px 1fr;column-gap:12px;row-gap:4px;align-items:center}
+.automation-flow-step .automation-step-icon{grid-row:1/4}
+.automation-flow-step small{font-size:9px}
+.automation-flow-step strong{font-size:13px}
+.automation-flow-step>span:last-child{font-size:10px}
+.work-display{min-height:385px;padding:17px}
+.work-ticket{width:min(85%,310px)}
+.work-ticket-main strong{font-size:29px}
+.pricing-paths{padding:7px 16px 15px}
+.pricing-path{padding:17px 0}
+.pricing-path strong{font-size:14px}
+.contact-options{padding:18px}
+.contact-option{grid-template-columns:37px 1fr 14px;gap:10px}
+.contact-option-icon{width:35px;height:35px;font-size:21px}
+.contact-option strong{font-size:12px}
+}
+@media(prefers-reduced-motion:reduce){.signature-hero .signature-text-link,.signature-hero .directory-explore,.signature-hero .work-action,.signature-hero .pricing-action,.signature-hero .contact-action{transition:none}}
