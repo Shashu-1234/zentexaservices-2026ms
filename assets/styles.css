@@ -292,3 +292,128 @@
 @media(max-width:540px){
   .signature-hero.page-hero{padding:104px 0 58px}
 }
+
+
+/* PREVIEW REFINEMENT: four featured panels use the established blue/green brand palette
+   instead of unrelated white, brown and purple blocks. Their distinct compositions stay. */
+
+/* Services — structured dark capability directory, not a white sheet. */
+.signature-hero.directory-hero .directory-panel{
+  background:linear-gradient(145deg,rgba(9,31,57,.96),rgba(10,52,65,.95));
+  border:1px solid rgba(132,234,199,.38);
+  border-radius:23px;
+  box-shadow:0 27px 70px rgba(0,11,29,.3),inset 0 1px rgba(255,255,255,.08);
+}
+.signature-hero.directory-hero .directory-head{
+  background:rgba(58,224,164,.08);
+  color:#a6ffcf;
+  border-bottom:1px solid rgba(132,234,199,.18);
+  padding:22px 27px;
+}
+.signature-hero.directory-hero .directory-row{
+  color:#f4fffc;
+  border-bottom:1px solid rgba(173,238,213,.15);
+  padding:28px 27px;
+  transition:background .25s ease;
+}
+.signature-hero.directory-hero .directory-row:hover{background:rgba(111,235,188,.07)}
+.signature-hero.directory-hero .directory-row b{color:#fff;font-weight:800}
+.signature-hero.directory-hero .directory-row small{color:#bbd8d9}
+.signature-hero.directory-hero .directory-number{color:#7ce8ba}
+.signature-hero.directory-hero .directory-row>span:last-child{color:#9affbb}
+.signature-hero.directory-hero .directory-foot{
+  background:rgba(30,124,106,.1);padding:19px 27px;
+  color:#a4e9ca;letter-spacing:1.1px;
+}
+.signature-hero.directory-hero .directory-foot span{color:#92ffb2}
+
+/* Projects — present a green/cream real coupon motif on a navy-green display. */
+.signature-hero.work-hero .work-display{
+  background:
+    radial-gradient(circle at 83% 18%,rgba(77,221,158,.19),transparent 43%),
+    linear-gradient(138deg,#0a2a4b,#12534a);
+  border:1px solid rgba(159,242,199,.32);
+  border-radius:24px;
+  box-shadow:0 26px 65px rgba(0,10,27,.27),inset 0 1px rgba(255,255,255,.08);
+}
+.signature-hero.work-hero .work-display:after{border-color:rgba(145,234,208,.24)}
+.signature-hero.work-hero .work-display-label,
+.signature-hero.work-hero .work-display-bottom{color:#d4f8e8}
+.signature-hero.work-hero .work-ticket{
+  background:#f9fff9;
+  border:1px solid #c5e9d5;
+  border-radius:10px;
+  box-shadow:15px 16px 0 rgba(135,230,182,.19),0 20px 34px rgba(2,20,25,.30);
+}
+.signature-hero.work-hero .work-ticket-top{background:#0b4d42;color:#fff}
+.signature-hero.work-hero .work-ticket-icon{color:#aaffc7}
+.signature-hero.work-hero .work-ticket-main small{color:#0d7856}
+.signature-hero.work-hero .work-ticket-main strong{color:#123a48}
+.signature-hero.work-hero .work-ticket-main>span{color:#496b65}
+.signature-hero.work-hero .work-ticket-edge{border-color:#b5dccc}
+.signature-hero.work-hero .work-ticket-bottom{color:#136c53}
+
+/* Pricing — a dark tiered decision panel with matching emerald highlights. */
+.signature-hero.pricing-hero .pricing-paths{
+  background:linear-gradient(145deg,rgba(7,29,58,.96),rgba(12,55,61,.95));
+  border:1px solid rgba(139,236,192,.36);
+  border-top:3px solid #51e6a0;
+  border-radius:22px;
+  box-shadow:0 27px 65px rgba(0,10,27,.29),inset 0 1px rgba(255,255,255,.07);
+  padding:12px 26px 19px;
+}
+.signature-hero.pricing-hero .pricing-paths-label{color:#b1ffce}
+.signature-hero.pricing-hero .pricing-paths-label span{color:#a6ff8f}
+.signature-hero.pricing-hero .pricing-path{
+  border-top:1px solid rgba(178,234,213,.17);
+  padding:25px 0;
+  transition:background .25s ease;
+}
+.signature-hero.pricing-hero .pricing-path:hover{background:rgba(114,230,181,.06)}
+.signature-hero.pricing-hero .pricing-path-number{color:#83e8bd;font-weight:900}
+.signature-hero.pricing-hero .pricing-path strong{color:#f4fffa}
+.signature-hero.pricing-hero .pricing-path>div>span{color:#b6d5d2}
+.signature-hero.pricing-hero .pricing-path-symbol{color:#83f1b6}
+.signature-hero.pricing-hero .pricing-paths-note{
+  border-top:1px solid rgba(178,234,213,.17);
+  color:#9bd4c8;
+  line-height:1.5;
+}
+
+/* Contact — premium deep-green conversation channels (still directly clickable). */
+.signature-hero.contact-hero .contact-options{
+  background:linear-gradient(145deg,rgba(7,39,53,.97),rgba(8,59,51,.95));
+  border:1px solid rgba(152,243,193,.39);
+  border-radius:22px;
+  color:#f5fffa;
+  box-shadow:14px 18px 0 rgba(93,222,165,.10),0 27px 64px rgba(0,15,27,.22);
+  padding:27px 30px;
+}
+.signature-hero.contact-hero .contact-options-top,
+.signature-hero.contact-hero .contact-options-foot{color:#a1e8ca}
+.signature-hero.contact-hero .contact-options-top>span:last-child{color:#a6ff8f}
+.signature-hero.contact-hero .contact-option{
+  border-top:1px solid rgba(159,234,201,.20);
+  padding:25px 0;
+  transition:background .2s ease;
+}
+.signature-hero.contact-hero .contact-option:hover{background:rgba(88,233,170,.07)}
+.signature-hero.contact-hero .contact-option-icon{background:rgba(91,232,158,.14);color:#9bffbd}
+.signature-hero.contact-hero .contact-option small{color:#a4dec5}
+.signature-hero.contact-hero .contact-option strong{color:#fff}
+.signature-hero.contact-hero .contact-option>span:last-child{color:#98ffb8}
+.signature-hero.contact-hero .contact-options-foot{border-top:1px solid rgba(159,234,201,.20)}
+@media(max-width:540px){
+  .signature-hero.directory-hero .directory-head,
+  .signature-hero.directory-hero .directory-foot{padding:17px}
+  .signature-hero.directory-hero .directory-row{padding:19px 16px}
+  .signature-hero.pricing-hero .pricing-paths{padding:9px 17px 18px}
+  .signature-hero.pricing-hero .pricing-path{padding:19px 0}
+  .signature-hero.contact-hero .contact-options{padding:20px}
+  .signature-hero.contact-hero .contact-option{padding:19px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  .signature-hero.directory-hero .directory-row,
+  .signature-hero.pricing-hero .pricing-path,
+  .signature-hero.contact-hero .contact-option{transition:none}
+}
