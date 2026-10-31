@@ -452,3 +452,12 @@
   .signature-hero.page-hero h1{font-size:clamp(30px,7.8vw,39px);letter-spacing:-.5px;line-height:1.16}
   .signature-hero.page-hero .badge{font-size:10px;letter-spacing:1.1px}
 }
+
+/* Pricing actions: all arrow affordances link directly to the enquiry form. */
+.pricing-paths .pricing-path{cursor:pointer;text-decoration:none}
+.pricing-paths .pricing-path:focus-visible,
+.pricing-paths .pricing-paths-quicklink:focus-visible{outline:2px solid #a6ff8f;outline-offset:3px;border-radius:5px}
+.signature-hero.pricing-hero .pricing-paths-quicklink{color:#a6ff8f;font-size:21px;text-decoration:none;line-height:1}
+.signature-hero.pricing-hero .pricing-paths-quicklink:hover{color:#fff}
+#quote-form{scroll-margin-top:96px}
+@media(max-width:900px){#quote-form{scroll-margin-top:86px}}
