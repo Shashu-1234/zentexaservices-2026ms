@@ -417,3 +417,38 @@
   .signature-hero.pricing-hero .pricing-path,
   .signature-hero.contact-hero .contact-option{transition:none}
 }
+
+
+/* Inner page heroes: concise labels and Home-consistent, appropriately scaled headlines.
+   Maintain the approved full-height gradient and distinct content layouts. */
+.signature-hero.page-hero h1{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(34px,3.45vw,51px);
+  line-height:1.14;
+  letter-spacing:-.85px;
+  font-weight:800;
+  margin-bottom:22px;
+}
+.signature-hero.page-hero .badge{
+  font-family:'DM Sans',Arial,sans-serif;
+  font-size:11px;
+  letter-spacing:1.3px;
+  margin-bottom:22px;
+}
+.signature-hero.page-hero .gradient{
+  background:linear-gradient(90deg,var(--mint),var(--lime));
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  color:transparent;
+}
+.signature-hero.page-hero .directory-copy h1,
+.signature-hero.page-hero .story-copy h1,
+.signature-hero.page-hero .pricing-copy h1{max-width:620px}
+@media(max-width:850px){
+  .signature-hero.page-hero h1{font-size:clamp(33px,5.3vw,45px);line-height:1.16}
+}
+@media(max-width:540px){
+  .signature-hero.page-hero h1{font-size:clamp(30px,7.8vw,39px);letter-spacing:-.5px;line-height:1.16}
+  .signature-hero.page-hero .badge{font-size:10px;letter-spacing:1.1px}
+}
