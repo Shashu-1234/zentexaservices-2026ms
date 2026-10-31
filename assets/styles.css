@@ -230,3 +230,65 @@
 .contact-option strong{font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.signature-hero .signature-text-link,.signature-hero .directory-explore,.signature-hero .work-action,.signature-hero .pricing-action,.signature-hero .contact-action{transition:none}}
+
+
+/* PREVIEW UPDATE: preserve six distinct hero layouts while restoring the exact Zentexa
+   navy-to-deep-green background and a full-screen-height opening section. */
+.signature-hero.page-hero{
+  min-height:100vh;
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  padding:130px 0 76px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 10% 12%,rgba(74,143,255,.3),transparent 30%),
+    radial-gradient(circle at 90% 70%,rgba(166,255,143,.24),transparent 32%),
+    linear-gradient(135deg,#041223,#0a2a5e 56%,#0d5c3a);
+}
+.signature-hero.page-hero:before{
+  display:block;
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:0;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:58px 58px;
+}
+.signature-hero.page-hero:after{display:none}
+.signature-hero .signature-inner{position:relative;z-index:1}
+.signature-hero h1{color:#fff}
+.signature-hero .story-copy h1 span,
+.signature-hero .story-copy h1 i,
+.signature-hero .directory-copy h1 span,
+.signature-hero .automation-heading h1 span,
+.signature-hero .work-copy h1 i,
+.signature-hero .pricing-copy h1 span,
+.signature-hero .contact-copy h1 i{color:#a6ff8f}
+.signature-hero .signature-overline,
+.signature-hero .story-kicker{color:#b8f0d0}
+.signature-hero .signature-overline>span:last-child{opacity:.8}
+.signature-hero .story-copy p,
+.signature-hero .directory-copy p,
+.signature-hero .automation-heading p,
+.signature-hero .work-copy p,
+.signature-hero .pricing-copy p,
+.signature-hero .contact-copy p{color:rgba(255,255,255,.79)}
+.signature-hero .signature-text-link,
+.signature-hero .directory-explore,
+.signature-hero .work-action,
+.signature-hero .pricing-action,
+.signature-hero .contact-action{color:#a6ff8f}
+@media(max-width:850px){
+  .signature-hero.page-hero{
+    min-height:100vh;
+    min-height:100svh;
+    padding:112px 0 66px;
+  }
+}
+@media(max-width:540px){
+  .signature-hero.page-hero{padding:104px 0 58px}
+}
